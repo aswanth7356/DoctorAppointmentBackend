@@ -38,3 +38,17 @@ exports.getUserDoctor=async(req,res)=>{
         res.status(400).json(err)
     } 
 }
+
+
+exports.deleteDoctor=async(req,res)=>{
+    const {id}=req.params
+    try{
+        const result=await doctor.findByIdAndDelete({_id:id})
+        res.status(200).json("Doctor Deleted!!")
+    }
+    catch(err){
+        console.log(err);
+        res.status(400).json(err)
+    }
+  
+}
