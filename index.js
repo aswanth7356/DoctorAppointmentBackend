@@ -13,6 +13,7 @@ const DctrServer=express()
 DctrServer.use(cors())
 DctrServer.use(express.json())
 DctrServer.use(router)
+DctrServer.use('/upload',express.static('./uploads'))
 
 
 

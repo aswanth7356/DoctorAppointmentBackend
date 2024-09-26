@@ -12,6 +12,7 @@ route.post('/reg',userController.register)
 route.post('/log',userController.login)
 
 route.post('/addDoctor',jwtMiddle,multerMiddle.single('picture'),doctorController.addDoctor)
+route.get('/viewDoctor',jwtMiddle,doctorController.getUserDoctor)
 
 
 

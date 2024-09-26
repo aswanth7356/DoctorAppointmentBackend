@@ -25,3 +25,16 @@ exports.addDoctor = async (req, res) => {
     }
     
 }   
+
+
+
+exports.getUserDoctor=async(req,res)=>{
+    try{
+        const userId=req.payload
+        const userDoctor=await doctor.find({userId})
+        res.status(200).json(userDoctor)
+    }
+    catch(err){
+        res.status(400).json(err)
+    } 
+}
