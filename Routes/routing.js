@@ -14,6 +14,8 @@ route.post('/log',userController.login)
 route.post('/addDoctor',jwtMiddle,multerMiddle.single('picture'),doctorController.addDoctor)
 route.get('/viewDoctor',jwtMiddle,doctorController.getUserDoctor)
 route.delete('/deleteDoctor/:id',jwtMiddle,doctorController.deleteDoctor)
+route.put('/updateDoctor/:id',jwtMiddle,multerMiddle.single('picture'),doctorController.UpdateDoctor)
+
 
 
 
